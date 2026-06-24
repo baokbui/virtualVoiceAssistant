@@ -25,6 +25,7 @@ from elevenlabs.conversational_ai.conversation import Conversation
 from elevenlabs.conversational_ai.default_audio_interface import DefaultAudioInterface
 from elevenlabs.conversational_ai.conversation import ConversationInitiationData
 
+# Override currently does not work
 user_name = "Khoi"
 schedule = "Tutoring at 11:00 AM; Night out at 9:00 PM"
 prompt = f"You are a helpful virtual assistant. Your interlocutor has the following schedule: {schedule}."
@@ -39,7 +40,7 @@ conversation_override = {
     },
 }
 
-config = ConversationInitiationData()
+config = ConversationInitiationData() # PROBLEM: Override does not work even if the system prompt and first message parameters in the override settings of the agent is turned on. The agent still speaks in its default way.
     #conversation_config_override=conversation_override,
     #extra_body={},
     #dynamic_variables={},
